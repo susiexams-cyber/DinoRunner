@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dino Runner - Endless Adventure</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <!-- Game UI -->
+        <div id="gameUI">
+            <div id="scoreDisplay">Score: <span id="score">0</span></div>
+            <div id="stageDisplay">Stage: <span id="stage">1 - Sunny Desert</span></div>
+            <div id="controls">
+                <button id="pauseBtn">⏸️</button>
+                <button id="soundBtn">🔊</button>
+            </div>
+        </div>
+
+        <!-- Game Canvas -->
+        <canvas id="gameCanvas"></canvas>
+
+        <!-- Game Over Screen -->
+        <div id="gameOverScreen" class="screen hidden">
+            <h2>Game Over!</h2>
+            <p>Final Score: <span id="finalScore">0</span></p>
+            <p>Highest Stage: <span id="highestStage">1</span></p>
+            <button id="restartBtn">🔄 Play Again</button>
+            <button id="shareBtn">📱 Share Score</button>
+        </div>
+
+        <!-- Start Screen -->
+        <div id="startScreen" class="screen">
+            <h1>🦕 Dino Runner</h1>
+            <p>Endless Adventure Awaits!</p>
+            <div class="instructions">
+                <h3>Controls:</h3>
+                <p><strong>Desktop:</strong> Spacebar/↑ to Jump, ↓ to Duck</p>
+                <p><strong>Mobile:</strong> Tap to Jump, Swipe Down to Duck</p>
+            </div>
+            <button id="startBtn">🎮 Start Game</button>
+        </div>
+
+        <!-- Touch Controls for Mobile -->
+        <div id="touchControls" class="hidden">
+            <button id="jumpBtn">⬆️ Jump</button>
+            <button id="duckBtn">⬇️ Duck</button>
+        </div>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="jumpSound" preload="auto">
+        <source src="sounds/jump.mp3" type="audio/mpeg">
+        <source src="sounds/jump.wav" type="audio/wav">
+    </audio>
+    <audio id="duckSound" preload="auto">
+        <source src="sounds/duck.mp3" type="audio/mpeg">
+        <source src="sounds/duck.wav" type="audio/wav">
+    </audio>
+    <audio id="collisionSound" preload="auto">
+        <source src="sounds/collision.mp3" type="audio/mpeg">
+        <source src="sounds/collision.wav" type="audio/wav">
+    </audio>
+    <audio id="stageSound" preload="auto">
+        <source src="sounds/stage-clear.mp3" type="audio/mpeg">
+        <source src="sounds/stage-clear.wav" type="audio/wav">
+    </audio>
+    <audio id="backgroundMusic" preload="auto" loop>
+        <source src="sounds/desert-music.mp3" type="audio/mpeg">
+        <source src="sounds/desert-music.wav" type="audio/wav">
+    </audio>
+
+    <script src="js/game.js"></script>
+    <script src="js/dino.js"></script>
+    <script src="js/obstacles.js"></script>
+    <script src="js/stages.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/controls.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
